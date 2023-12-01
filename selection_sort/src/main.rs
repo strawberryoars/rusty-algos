@@ -1,14 +1,14 @@
 
-// #[cfg(test)]
-// mod tests {
-//    use super::*;
+#[cfg(test)]
+mod tests {
+   use super::*;
 
-//    #[test]
-//    fn test_selection_sort() {
-//        let array = vec![1, 3, 5, 7, 9];
-//        assert_eq!(selection_sort(&array), [1, 3, 5, 7, 9].to_vec());
-//    }
-// }
+   #[test]
+   fn test_selection_sort() {
+       let mut array = vec![1, 3, 5, 7, 9];
+       assert_eq!(selection_sort(&mut array), [1, 3, 5, 7, 9].to_vec());
+   }
+}
 
 fn find_smallest(array: &Vec<i32>) -> usize {
     let mut smallest = array[0];
