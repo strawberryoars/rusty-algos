@@ -1,5 +1,12 @@
 # Factorial
 
+```
+In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n.The value of 0! is 1, according to the convention for an empty product.
+```
+
+Example:
+3! = 3 * 2! = 3 * (2 * 1!) = 3 * (2 * 1 * 1) = 6
+
 | Code      | Call Stack | Notes |
 | ----------- | ----------- |----------- |
 | factorial(3)  | <table>  <thead>  <tr>  <th colspan="2"> factorial</th> </tr>  </thead>  <tbody>  <tr> <td> x </td> <td>3</td> </tr>   </tbody>  </table>      | first call to factorial x is 3 |
