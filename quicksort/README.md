@@ -27,10 +27,11 @@ Now we need to reduce our problem and get to this base case.
 1. Pick a pivot
 2. Partition the array into two sub-arrays: elements less than the pivot and element greater than the pivot
 3. Call quicksort recursively on the two sub-arrays.
-
+```
 [33,10,15,7]
 [10,15,7] <33> []
 [7] <10> [15]
+```
 
 ### Mathematical Analysis
 
@@ -40,6 +41,7 @@ In the average case quicksort takes O(n log n)
 
 #### Worse Case
 In the worst case, you can see this occur if you attempted to sort an already sorted array and always picked the 1st element as the pivot. For example:
+```
 [1,2,3,4,5,6,7,8]
 [] <1> [2,3,4,5,6,7,8]
 [] <2> [3,4,5,6,7,8]
@@ -48,15 +50,19 @@ In the worst case, you can see this occur if you attempted to sort an already so
 [] <5> [6,7,8]
 [] <6> [7,8]
 [] <7> [8]
+```
 
 In this worst case example, the stack size is O(n) so the algorithm will take O(n) * O(n) = O(n^2) time.
 
 #### Best Case
 If you picked the middle element for the pivot everytime, you won't need to make as many recursive calls. For example:
+```
 [1,2,3,4,5,6,7,8]
 [1,2,3] <4> [5,6,7,8]
 [1] <2> [3]    [5] <6> [7,8]
                     [] <7> [8]
+```
+
 This illustrates a call stack size of 4 compared to 8 in the worst case example above.  This means best case has O(log n) levels.
 In this best case example, each level takes O(n).  This yields a time complexity of O(n) * O(log n) = O(n log n)
 
