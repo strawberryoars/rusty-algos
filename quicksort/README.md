@@ -40,7 +40,8 @@ In the worst case quicksort takes O(n^2)
 In the average case quicksort takes O(n log n)
 
 #### Worse Case
-In the worst case, you can see this occur if you attempted to sort an already sorted array and always picked the 1st element as the pivot. For example:
+In the worst case, you will have an unbalanced partition where one of the parititions or subarray will contain no elements and the oother partition will contain n-1 elements.
+You can see this occur if you attempted to sort an already sorted array and always picked the 1st element as the pivot. For example:
 ```
 [1,2,3,4,5,6,7,8]
 [] <1> [2,3,4,5,6,7,8]
@@ -51,10 +52,12 @@ In the worst case, you can see this occur if you attempted to sort an already so
 [] <6> [7,8]
 [] <7> [8]
 ```
-
-In this worst case example, the stack size is O(n) so the algorithm will take O(n) * O(n) = O(n^2) time.
+The problem size will only be reduced by 1 (the size of the pivot), because the recursive calls to quick sort are made on the elements on either side of the partition (which will have n-1 elements on 1 side and 0 on the other).
+Since partitioning is O(n) and the problem size reduces by 1 each partition it will be: O( n + (n-1) + (n-2) + ... + 3 + 2 + 1) = O(n^2)
+put another way the stack size is O(n) so the algorithm will take O(n) * O(n) = O(n^2) time.
 
 #### Best Case
+The best case occurs when the parititions are evenly balanced as possible: their sizes are either equal or are within 1 of each other.
 If you picked the middle element for the pivot everytime, you won't need to make as many recursive calls. For example:
 ```
 [1,2,3,4,5,6,7,8]
@@ -68,4 +71,4 @@ In this best case example, each level takes O(n).  This yields a time complexity
 
 
 #### Average case
-The best case is the same as the average case
+The best case is the same as the average case.
