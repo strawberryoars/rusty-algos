@@ -17,32 +17,32 @@ mod tests {
 
     #[test]
     fn test_single_node() {
-    let nodes = vec![Node(1)];
-    let edges = vec![];
-    let graph = Graph::new(nodes, edges);
+        let nodes = vec![Node(1)];
+        let edges = vec![];
+        let graph = Graph::new(nodes, edges);
 
-    let result = graph.bfs(1);
-    assert_eq!(result, vec![1]);
+        let result = graph.bfs(1);
+        assert_eq!(result, vec![1]);
     }
 
    #[test]
     fn test_disconnected_graph() {
-    let nodes = vec![Node(1), Node(2), Node(3), Node(4)];
-    let edges = vec![Edge(1, 2), Edge(3, 4)];
-    let graph = Graph::new(nodes, edges);
+        let nodes = vec![Node(1), Node(2), Node(3), Node(4)];
+        let edges = vec![Edge(1, 2), Edge(3, 4)];
+        let graph = Graph::new(nodes, edges);
 
-    let result = graph.bfs(1);
-    assert_eq!(result, vec![1, 2]);
+        let result = graph.bfs(1);
+        assert_eq!(result, vec![1, 2]);
     }
 
     #[test]
     fn test_tree_with_multiple_branches() {
-    let nodes = vec![Node(1), Node(2), Node(3), Node(4), Node(5), Node(6)];
-    let edges = vec![Edge(1, 2), Edge(1, 3), Edge(2, 4), Edge(2, 5), Edge(3, 6)];
-    let graph = Graph::new(nodes, edges);
+        let nodes = vec![Node(1), Node(2), Node(3), Node(4), Node(5), Node(6)];
+        let edges = vec![Edge(1, 2), Edge(1, 3), Edge(2, 4), Edge(2, 5), Edge(3, 6)];
+        let graph = Graph::new(nodes, edges);
 
-    let result = graph.bfs(1);
-    assert_eq!(result, vec![1, 2, 3, 4, 5, 6]);
+        let result = graph.bfs(1);
+        assert_eq!(result, vec![1, 2, 3, 4, 5, 6]);
     }
 
 }
