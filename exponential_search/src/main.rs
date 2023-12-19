@@ -73,10 +73,10 @@ pub fn exponential_search<T: Ord>(item: &T, arr: &[T]) -> Option<usize> {
 
 fn main() {
     let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-   let item = 6;
+    let item = 6;
 
-   match exponential_search(&item, &arr) {
-       Some(index) => println!("Item found at index: {}", index),
-       None => println!("Item not found in the array"),
-   }
+    match exponential_search(&item, &arr) {
+        Some(index) => println!("Item found at index: {}", index),
+        None => println!("Item not found in the array"),
+    }
 }
